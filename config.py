@@ -1,9 +1,3 @@
-
----
-
-## ✅ 1. `config.py`
-
-```python
 import os
 
 HF_TOKEN = os.environ.get("HF_TOKEN", "")
@@ -23,15 +17,14 @@ UNIVERSES = {
     ]
 }
 
-# Macro column to use as treatment (e.g., VIX shock)
+MACRO_COLUMNS = ["VIX", "DXY", "T10Y2Y", "TBILL_3M", "IG_SPREAD", "HY_SPREAD"]
+
 TREATMENT_COL = "VIX"
 TREATMENT_THRESHOLD = 0.5
 
-# Rolling windows (days)
 WINDOWS = [63, 252, 504, 1008, 2016]
 
-# DoubleML hyperparameters
-MODEL_Y = "forest"   # or "linear"
+MODEL_Y = "forest"
 MODEL_T = "forest"
 CROSSFOLD = 3
 
